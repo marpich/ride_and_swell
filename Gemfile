@@ -34,6 +34,7 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem 'bootstrap', '~> 5.1.3'
 
 
 group :development, :test do
