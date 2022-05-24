@@ -1,29 +1,38 @@
-<div class= "banner-sport">
+
+<div class="card-category-sport m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   <h1><%= @equipment.sport %></h1>
 </div>
 
 <div class="container">
 
-  <div class="title">
-    <h2> <%= @equipment.title %> </h1>
-  </div>
+  <div class="card">
+    <div class="card-body">
 
-  <div class="subtitle">
-    <h3>📍 <%= @equipment.location %> </h3>
-    <div class="avatar">
-      <p> <%= @equipment.user.first_name %> </p>
+      <div class="card-title text-center">
+        <h2> <%= @equipment.title %> </h2>
+      </div>
+
+      <div class="card-subtitle d-flex justify-content-between">
+        <h3>📍 <%= @equipment.location %> </h3>
+        <div class="avatar">
+          <p><%= @equipment.user.first_name %> <%= @equipment.user.photo.key %> </p>
+        </div>
+      </div>
+
+      <div class="card-text d-flex justify-content-around">
+        <img src="" alt="image-kitesurf">
+        <div class="description-text">
+          <p>Marque: <%= @equipment.brand %></p>
+          <p>Taille de la board: <%= @equipment.board_size %> </p>
+          <p>Taille de l'aile: <%= @equipment.sail_size %> </p>
+          <p>Etat: <%= @equipment.condition %></p>
+          <p>Description: <%= @equipment.description %></p>
+          <p>Prix/jour: <%= @equipment.price %> euros </p>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <div class="description">
-    <img src="" alt="image-kitesurf">
-    <div class="description-text">
-      <p>Marque: <%= @equipment.brand %></p>
-      <p>Taille de la board: <%= @equipment.board_size %> </p>
-      <p>Taille de l'aile: <%= @equipment.sail_size %> </p>
-      <p>Etat: <%= @equipment.condition %></p>
-      <p>Description: <%= @equipment.description %></p>
-      <p>Prix/jour: <%= @equipment.price %> euros </p>
-    </div>
+
   </div>
 
 </div>
