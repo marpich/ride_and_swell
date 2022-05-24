@@ -2,42 +2,42 @@ class EquipmentsController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @equipments = Equipement.all
+    @equipments = Equipment.all
   end
 
   def show
   end
 
   def new
-    @equipment = Equipement.new
+    @equipment = Equipment.new
   end
 
   def create
+    @equipment = Equipment.new(equipment_params)
     @equipment.save
-    redirect_to equipement_path(@equipment)
+    redirect_to equipment_path(@equipment)
   end
 
   def edit
-    @equipment = Equipement.find(params[:id])
   end
 
   def update
-    @equipement.update(equipement_params)
-    redirect_to equipement_path(@equipment)
+    @equipement.update(equipment_params)
+    redirect_to equipment_path(@equipment)
   end
 
   def destroy
-    @equipement.destroy
+    @equipment.destroy
     redirect_to equipments_path
   end
 
   private
 
-  def equipement_params
-    params.require(:equipment).permit(:sport, :brand, :price, :image, :description, :location)
+  def equipment_params
+    params.require(:equipment).permit(:sport, :brand, :price, :image, :description, :location, :board_size, :sail_size)
   end
 
   def set_equipment
-    @equipment = Equipement.find(params[:id])
+    @equipment = Equipment.find(params[:id])
   end
 end
