@@ -1,19 +1,26 @@
-<%# <%= form_tag equipments_path, method: 'get' do %>
-  <%# <%= select_tag @equipments.title, Options::TYPE %> 
-  <%# <%= submit_tag 'Filter' %>
-<%# <% end %>
 
+<div class="m-4">
+  <%= simple_form_for :search, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :title, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 m-2">
-  <div class="col">
-    <% @equipments.each do |equipment| %>
+<div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+  <% @equipments.each do |equipment| %>
+    <div class="">
       <div class="card">
-        <img src="https://loremflickr.com/320/240/<%=equipment.title%>" class="card-img-top" alt="...">
+        <img src="https://picsum.photos/200" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= equipment.title %></h5>
           <p class="card-text"><%= equipment.description %></p>
+          <div class="card-footer">
+          <div class="d-flex justify-content-between">
+              <a href="#" class="btn btn-primary">Réserver</a>
+              <%= equipment.price %>€ par jour</div>
+          </div>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
