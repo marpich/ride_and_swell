@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <% @Equipments.each do |equipment| %>
+      <div class="card">
+        <img src="https://loremflickr.com/320/240/<%=equipment.title%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= equipment.title %></h5>
+          <p class="card-text"><%= equipment.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
