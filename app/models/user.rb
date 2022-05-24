@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :bookings
+
+  validates :first_name, :last_name, :phone, presence: true
 end
