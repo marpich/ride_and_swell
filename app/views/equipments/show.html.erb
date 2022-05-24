@@ -20,8 +20,8 @@
       </div>
 
       <div class="card-text d-flex justify-content-around">
-        <img src="" alt="image-kitesurf">
-        <div class="description-text">
+        <%= cl_image_tag(@equipment.photo.key) %>
+        <div class="description-text flex-grow-1">
           <p>Marque: <%= @equipment.brand %></p>
           <p>Taille de la board: <%= @equipment.board_size %> </p>
           <p>Taille de l'aile: <%= @equipment.sail_size %> </p>
