@@ -4,4 +4,5 @@ class Equipment < ApplicationRecord
   has_many :bookings
 
   validates :sport, :brand, :price, :image, :description, :location, :title, :condition, presence: true
+  has_one_attached :photo
 end
