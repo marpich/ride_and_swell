@@ -1,28 +1,28 @@
 <div class= "banner-sport">
-  <h1>Kitesurf</h1>
+  <h1><%= @equipment.sport %></h1>
 </div>
 
 <div class="container">
 
   <div class="title">
-    <h2> KiteSurf Kite Unik de Gong - Année 2021 </h1>
+    <h2> <%= @equipment.title %> </h1>
   </div>
 
   <div class="subtitle">
-    <h3>📍 Nantes</h3>
+    <h3>📍 <%= @equipment.location %> </h3>
     <div class="avatar">
-      <p> Margaux </p>
+      <p> <%= @equipment.user.first_name %> </p>
     </div>
   </div>
   <div class="description">
     <img src="" alt="image-kitesurf">
     <div class="description-text">
-      <p>Gong</p>
-      <p>Taille de la board: 135x41 </p>
-      <p>Taille de l'aile: 12m2 </p>
-      <p>Etat: Neuf</p>
-      <p>Description: Matériel en super état, seulement deux sorties, acheté en 2021.</p>
-      <p>Prix/jour: 50€</p>
+      <p>Marque: <%= @equipment.brand %></p>
+      <p>Taille de la board: <%= @equipment.board_size %> </p>
+      <p>Taille de l'aile: <%= @equipment.sail_size %> </p>
+      <p>Etat: <%= @equipment.condition %></p>
+      <p>Description: <%= @equipment.description %></p>
+      <p>Prix/jour: <%= @equipment.price %> euros </p>
     </div>
   </div>
 
