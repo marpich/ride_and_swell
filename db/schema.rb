@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_154611) do
+ActiveRecord::Schema.define(version: 2022_05_24_084411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_154611) do
     t.bigint "equipment_id", null: false
     t.bigint "user_id", null: false
     t.string "status"
-    t.string "location"
     t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -57,18 +56,19 @@ ActiveRecord::Schema.define(version: 2022_05_23_154611) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "equipment", force: :cascade do |t|
+  create_table "equipments", force: :cascade do |t|
     t.string "sport"
     t.string "brand"
     t.bigint "user_id", null: false
     t.integer "price"
     t.string "image"
     t.string "description"
-    t.integer "board_size"
-    t.integer "sail_size"
+    t.float "board_size"
+    t.float "sail_size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_equipment_on_user_id"
+    t.string "location"
+    t.index ["user_id"], name: "index_equipments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_154611) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "equipment"
+  add_foreign_key "bookings", "equipments"
   add_foreign_key "bookings", "users"
-  add_foreign_key "equipment", "users"
+  add_foreign_key "equipments", "users"
 end
