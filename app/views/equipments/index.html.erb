@@ -1,12 +1,12 @@
-<%= form_tag events_path, method: 'get' do %>
-  <%= select_tag :sport, Options::TYPE %>
-  <%= submit_tag 'Filter' %>
-<% end %>
+<%# <%= form_tag equipments_path, method: 'get' do %>
+  <%# <%= select_tag @equipments.title, Options::TYPE %> 
+  <%# <%= submit_tag 'Filter' %>
+<%# <% end %>
 
 
 <div class="row row-cols-1 row-cols-md-2 g-4 m-2">
   <div class="col">
-    <% @Equipments.each do |equipment| %>
+    <% @equipments.each do |equipment| %>
       <div class="card">
         <img src="https://loremflickr.com/320/240/<%=equipment.title%>" class="card-img-top" alt="...">
         <div class="card-body">
