@@ -16,6 +16,7 @@ user4 = User.create(first_name: "clement", last_name: "spiers", email: "clement@
 puts "seeding users done"
 
 puts "seeding equipments surf starting"
+
 equipment_surf_1 = Equipment.create(sport: "surf", brand: "Tyler Warren", user_id: user1, price: 35, description: "superbe planche de surf pour un pur moment de plaisir en mer", board_size: 2.15, title: "planche surf", condition: "perfect", location: "La Baule")
 
 equipment_surf_2 = Equipment.create(sport: "surf", brand: "Decathlon", user_id: user2, price: 30, description: "bonne planche pour les debutants", board_size: 2.10, title: "surf decat bon etat", condition: "good", location: "Lacanau")
