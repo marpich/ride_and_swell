@@ -3,6 +3,7 @@ class EquipmentsController < ApplicationController
 
   def index
     @equipments = Equipment.all
+    handle_filters
   end
 
   def show
