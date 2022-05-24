@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :bookings
   has_many :equipments
-
 end
