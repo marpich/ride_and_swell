@@ -7,7 +7,7 @@
 
       <% @categories.each do |category| %>
         <%= link_to equipments_path(category: category) do %>
-          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=asset_path category.gsub(' ','')%>')">
+          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=asset_path category.gsub(' ','').downcase%>')">
             <%= category %>
           </div>
         <% end %>

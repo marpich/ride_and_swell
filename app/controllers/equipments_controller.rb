@@ -10,6 +10,7 @@ class EquipmentsController < ApplicationController
     if @search.present?
       @title = @search["title"]
       @equipments = Equipment.where(title: @title)
+    end
 
     @markers = @equipments.geocoded.map do |equipment|
       {
