@@ -33,12 +33,20 @@
           <% end %>
           <p><strong>Etat:</strong> <%= @equipment.condition %></p>
           <p class="description">Description: <%= @equipment.description %></p>
-
         </div>
       </div>
-
     </div>
+  </div>
 
+  <div class="booking-form">
+    <div class="container">
+      <%= simple_form_for [ @equipment, @booking ] do |f| %>
+        <%= f.input :start_date, label: "Début de location", html5: true %>
+        <%= f.input :end_date, label: "Fin de location", html5: true %>
+        <%= f.submit "Louer", class: "btn btn-primary w-100" %>
+      <% end %>
+      <%# <%= @equipment.price * (@booking.end_date - @booking.start_date).to_i  %> %>
+    </div>
   </div>
 
 </div>
