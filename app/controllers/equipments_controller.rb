@@ -3,10 +3,11 @@ class EquipmentsController < ApplicationController
 
   def index
     @equipments = Equipment.all
-    @search = params["search"]
+    # binding.pry
+    @search = params["equipment"]
     if @search.present?
-      @sport = @search["sport"]
-      @equipments = Equipment.where("sport ILIKE ?", "%#{@sport}%")
+      @sport = params["equipment"]["sport"]
+      @equipments = Equipment.where(sport: @sport)
     end
   end
 
