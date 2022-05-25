@@ -5,8 +5,8 @@ class EquipmentsController < ApplicationController
     @equipments = Equipment.all
     @search = params["search"]
     if @search.present?
-      @title = @search["title"]
-      @equipments = Equipment.where("title ILIKE ?", "%#{@title}%")
+      @sport = @search["sport"]
+      @equipments = Equipment.where("sport ILIKE ?", "%#{@sport}%")
     end
   end
 
