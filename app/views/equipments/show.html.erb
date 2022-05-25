@@ -1,41 +1,54 @@
 
-<div class="card-category-sport m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url("#{@equipment.sport.downcase}-banner.jpeg") %>)">
+<div class="card-category-sport" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url("#{@equipment.sport.downcase}-banner.jpeg") %>)">
   <h1><%= @equipment.sport %></h1>
 </div>
 
-<div class="container">
 
-  <div class="card">
-    <div class="card-body">
+<div class="card">
+  <div class="card-title">
+    <h2> <%= @equipment.title.capitalize %> </h2>
+    <button type="button" class="btn btn-secondary">
+      <%= link_to 'Retour', equipments_path %>
+    </button>
+  </div>
 
-      <div class="card-title">
-        <h2> <%= @equipment.title %> </h2>
+  <div class="card-subtitle">
+    <h4> <i class="fas fa-map-marker-alt"></i> <%= @equipment.location %> </h4>
+    <p> <i class="fas fa-user"></i> <%= @equipment.user.first_name.capitalize %></p>
+  </div>
+
+  <div class="card-equipment">
+    <%= cl_image_tag(@equipment.photo.key) %>
+    <div class="card-equipment-info">
+      <div class="price">
+        <h2><%= @equipment.price %>€</h2>
+        <p> <i>prix/jour</i> </p>
       </div>
+      <span><strong>Marque</strong></span>
+      <p><%= @equipment.brand %></p>
+      <% if @equipment.board_size? %>
+        <span><strong>Taille de la board</strong></span>
+        <p><%= @equipment.board_size %></p>
+      <% end %>
+      <% if @equipment.sail_size? %>
+        <span><strong>Taille de l'aile</strong></span>
+        <p><%= @equipment.sail_size %></p>
+      <% end %>
+      <span><strong>Etat</strong></span>
+      <p><%= @equipment.condition %></p>
+      <span><strong>Description</strong></span>
+      <p><%= @equipment.description %></p>
+    </div>
 
-      <div class="card-subtitle d-flex justify-content-between">
-        <h3>📍 <%= @equipment.location %> </h3>
-        <p><%= @equipment.user.first_name %></p>
-      </div>
-
-      <div class="card-text d-flex justify-content-around">
-        <%= cl_image_tag(@equipment.photo.key, :width => 400, :height => 400) %>
-        <div class="description-text">
-          <div class="price">
-            <h2><%= @equipment.price %>€</h2>
-            <p> <i>prix/jour</i> </p>
-          </div>
-          <p><strong>Marque:</strong> <%= @equipment.brand %></p>
-          <% if @equipment.board_size? %>
-            <p><strong>Taille de la board:</strong> <%= @equipment.board_size %> </p>
-          <% end %>
-          <% if @equipment.sail_size? %>
-            <p><strong>Taille de l'aile:</strong> <%= @equipment.sail_size %> </p>
-          <% end %>
-          <p><strong>Etat:</strong> <%= @equipment.condition %></p>
-          <p class="description">Description: <%= @equipment.description %></p>
-
+    <div class="booking-form">
+        <%= simple_form_for [ @equipment, @booking ] do |f| %>
+        <div class="booking-form-input">
+          <%= f.input :start_date, label: "Début de location", html5: true %>
+          <%= f.input :end_date, label: "Fin de location", html5: true %>
         </div>
-      </div>
+        <p> Prix total </p>
+          <%= f.submit "Louer", class: "btn btn-primary w-100" %>
+        <% end %>
 
       <div data-controller="booking-form" data-booking-form-dailyprice-value='<%= @equipment.price %>'>
         <%= simple_form_for [@equipment, @booking] do |f| %>
@@ -48,6 +61,7 @@
       </div>
     </div>
 
-  </div>
 
+    </div>
+  </div>
 </div>

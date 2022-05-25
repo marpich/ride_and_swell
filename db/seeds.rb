@@ -8,13 +8,13 @@ User.destroy_all
 puts "db clean"
 
 puts "seeding users starting"
-user1 = User.create!(first_name: "yohann", last_name: "lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
+user1 = User.create!(first_name: "Yohann", last_name: "Lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
 
-user2 = User.create!(first_name: "cedric", last_name: "le brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
+user2 = User.create!(first_name: "Cedric", last_name: "Le Brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
 
-user3 = User.create!(first_name: "margaux", last_name: "pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
+user3 = User.create!(first_name: "Margaux", last_name: "Pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
 
-user4 = User.create!(first_name: "clement", last_name: "spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
+user4 = User.create!(first_name: "Clement", last_name: "Spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
 puts "seeding users done"
 
 puts "seeding equipments surf starting"
@@ -74,17 +74,17 @@ puts " seeding equipments kite surf done"
 
 puts " seeding equipments kayak starting"
 equipment_kayak_1 = Equipment.new(sport: "Kayak", brand: "Ventura", user: user2, price: 40, description: "kayak gonflable , il y a une pompe , super agreable ", board_size: 3.30, title: "kayak super à 2", condition: "medium", location: "La Baule")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_1.photo.attach(io: file, filename: 'kayak1.png', content_type: 'image/png')
 equipment_kayak_1.save!
 
 equipment_kayak_2 = Equipment.new(sport: "Kayak", brand: "Cove", user: user3, price: 42, description: "kayak gonflable , je le loue pour 1 semaine minimun  ", board_size: 3.20, title: "kayak super pour balade romantique", condition: "perfect", location: "Lacanau")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_2.photo.attach(io: file, filename: 'kayak2.png', content_type: 'image/png')
 equipment_kayak_2.save!
 
 equipment_kayak_3 = Equipment.new(sport: "Kayak", brand: "Decathlon", user: user4, price: 38, description: "je l'ai acheter lété dernier il est impecable , super pour les enfants ,kayak gonflable  ", board_size: 3.25, title: "kayak avec jumelles pour mater sur la plage", condition: "good", location: "St Malo")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_3.photo.attach(io: file, filename: 'kayak3.png', content_type: 'image/png')
 equipment_kayak_3.save!
 

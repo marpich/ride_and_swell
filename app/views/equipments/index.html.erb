@@ -1,21 +1,29 @@
 
-<div class="m-4">
-  <%= simple_form_for :search, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :title, input_html: {value: ""} %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
+<div class="m-5">
+  <%# <% unless params["sport"] %>
+    <%= simple_form_for :equipment, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :sport, collection: Equipment::SPORTS, input_html: {value: ""}, label: false,  class: "form-control form-control-lg" %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  <%# <% end %>
 </div>
 
-<div class="row row-cols-md-4 g-4 m-3">
+<%# <%= @mkers %>
+<div class="row d-flex justify-content-between row-cols-md-4 g-4 m-5">
+  <div style="height: 600px;" class="d-flex p-2 left-half"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <% @equipments.each do |equipment| %>
       <div class="card">
-        <img src="https://picsum.photos/200" class="card-img-top p-3" alt="...">
+        <%= cl_image_tag(equipment.photo.key, :class => "card-img-top p-3", :height => 400) %>
         <div class="card-body">
           <h5 class="card-title"><%= equipment.title %></h5>
           <p class="card-text"><%= equipment.description %></p>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <a href="#" class="btn btn-primary">Réserver</a>
+            <%= link_to "Voir l'article", equipment, class: "btn btn-primary" %>
             <p><%= equipment.price %>€ par jour</p>
         </div>
       </div>
