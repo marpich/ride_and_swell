@@ -40,16 +40,18 @@
       <p><%= @equipment.description %></p>
     </div>
 
-    <div class="booking-form">
-        <%= simple_form_for [ @equipment, @booking ] do |f| %>
+      <div class="booking-form" data-controller="booking-form" data-booking-form-dailyprice-value='<%= @equipment.price %>'>
+        <%= simple_form_for [@equipment, @booking] do |f| %>
         <div class="booking-form-input">
-          <%= f.input :start_date, label: "Début de location", html5: true %>
-          <%= f.input :end_date, label: "Fin de location", html5: true %>
+          <%= f.input :start_date, label: "Début de location", html5: true, input_html: { "data-action":"change->booking-form#update" ,"data-booking-form-target":"startdate" } %>
+          <%= f.input :end_date, label: "Fin de location", html5: true, input_html: { "data-action":"change->booking-form#update", "data-booking-form-target":"enddate" } %>
         </div>
-        <p> Prix total </p>
+          <%= f.input :total_price, label: false, input_html: { hidden: true,  "data-booking-form-target":"totalpriceinput" } %>
+          <div> Montant total : <span data-booking-form-target="totalprice" >0</span>€</div>
           <%= f.submit "Louer", class: "btn btn-primary w-100" %>
         <% end %>
-
+      </div>
+    </div>
 
 
     </div>
