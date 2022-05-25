@@ -1,11 +1,10 @@
 
-<div class="m-5">
-  <%# <% unless params["sport"] %>
-    <%= simple_form_for :equipment, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :sport, collection: Equipment::SPORTS, input_html: {value: ""}, label: false,  class: "form-control form-control-lg" %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-    <% end %>
-  <%# <% end %>
+
+<div class="m-4">
+  <%= simple_form_for :search, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :title, input_html: {value: params[:category]} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <%# <%= @mkers %>
