@@ -9,7 +9,8 @@ class EquipmentsController < ApplicationController
       @sport = params["equipment"]["sport"]
       @equipments = Equipment.where(sport: @sport)
     end
-    @markers = @equipments.map do |equipment|
+
+    @markers = @equipments.geocoded.map do |equipment|
       {
         lat: equipment.latitude,
         lng: equipment.longitude,
