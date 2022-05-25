@@ -9,6 +9,14 @@ class EquipmentsController < ApplicationController
       @sport = params["equipment"]["sport"]
       @equipments = Equipment.where(sport: @sport)
     end
+
+    @markers = @equipments.geocoded.map do |equipment|
+      {
+        lat: equipment.latitude,
+        lng: equipment.longitude,
+        image_url: helpers.asset_url("surfboard.jpg")
+      }
+    end
   end
 
   def show
