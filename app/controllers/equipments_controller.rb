@@ -10,10 +10,18 @@ class EquipmentsController < ApplicationController
     if @search.present?
       @title = @search["title"]
       @equipments = Equipment.where(title: @title)
+
+    @markers = @equipments.geocoded.map do |equipment|
+      {
+        lat: equipment.latitude,
+        lng: equipment.longitude,
+        image_url: helpers.asset_url("surfboard.jpg")
+      }
     end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new

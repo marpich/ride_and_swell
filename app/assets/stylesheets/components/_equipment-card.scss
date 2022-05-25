@@ -1,0 +1,66 @@
+.card {
+ margin: 10px 10px;
+ padding: 20px 20px;
+ border-radius: 5px;
+ box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-title button {
+ padding: 0px 20px;
+}
+
+.card-subtitle {
+  margin-bottom: 10px;
+}
+
+.card-equipment {
+  overflow: hidden;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+}
+
+.card-equipment img {
+  width: 35%;
+  object-fit: cover;
+}
+
+.card-equipment-info {
+  padding: 20px 20px;
+  margin: 0px 20px 0px 20px;
+  border-radius: 10px;
+  width: 30%;
+  height: auto;
+}
+
+.price {
+  text-align: right;
+}
+
+.booking-form {
+  background-color: white;
+  width: 270px;
+  padding: 15px 15px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.16);
+}
+
+.booking-form-input {
+border-bottom: 1px solid rgb(221, 221, 221);
+margin-bottom: 40px;
+}
