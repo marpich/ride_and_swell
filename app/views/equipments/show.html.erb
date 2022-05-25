@@ -37,6 +37,15 @@
         </div>
       </div>
 
+      <div data-controller="booking-form" data-booking-form-dailyprice-value='<%= @equipment.price %>'>
+        <%= simple_form_for [@equipment, @booking] do |f| %>
+          <%= f.input :start_date, html5: true, input_html: { "data-action":"change->booking-form#update" ,"data-booking-form-target":"startdate" } %>
+          <%= f.input :end_date, html5: true, input_html: { "data-action":"change->booking-form#update", "data-booking-form-target":"enddate" } %>
+          <%= f.input :total_price, label: false, input_html: { hidden: true,  "data-booking-form-target":"totalpriceinput" } %>
+          <div> Montant total : <span data-booking-form-target="totalprice" >0</span>€</div>
+          <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
 
   </div>
