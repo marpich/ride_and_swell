@@ -8,7 +8,7 @@
   <div class="card">
     <div class="card-body">
 
-      <div class="card-title text-center">
+      <div class="card-title">
         <h2> <%= @equipment.title %> </h2>
       </div>
 
@@ -18,14 +18,22 @@
       </div>
 
       <div class="card-text d-flex justify-content-around">
-        <%= cl_image_tag(@equipment.photo.key) %>
-        <div class="description-text flex-grow-1">
-          <p>Marque: <%= @equipment.brand %></p>
-          <p>Taille de la board: <%= @equipment.board_size %> </p>
-          <p>Taille de l'aile: <%= @equipment.sail_size %> </p>
-          <p>Etat: <%= @equipment.condition %></p>
-          <p>Description: <%= @equipment.description %></p>
-          <p>Prix/jour: <%= @equipment.price %> euros </p>
+        <%= cl_image_tag(@equipment.photo.key, :width => 400, :height => 400) %>
+        <div class="description-text">
+          <div class="price">
+            <h2><%= @equipment.price %>€</h2>
+            <p> <i>prix/jour</i> </p>
+          </div>
+          <p><strong>Marque:</strong> <%= @equipment.brand %></p>
+          <% if @equipment.board_size? %>
+            <p><strong>Taille de la board:</strong> <%= @equipment.board_size %> </p>
+          <% end %>
+          <% if @equipment.sail_size? %>
+            <p><strong>Taille de l'aile:</strong> <%= @equipment.sail_size %> </p>
+          <% end %>
+          <p><strong>Etat:</strong> <%= @equipment.condition %></p>
+          <p class="description">Description: <%= @equipment.description %></p>
+
         </div>
       </div>
 
