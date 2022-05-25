@@ -7,6 +7,17 @@
 
 .card-title {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-title button {
+ padding: 0px 20px;
 }
 
 .card-subtitle {
@@ -51,5 +62,5 @@
 
 .booking-form-input {
 border-bottom: 1px solid rgb(221, 221, 221);
-margin-bottom: 20px;
+margin-bottom: 40px;
 }
