@@ -74,17 +74,17 @@ puts " seeding equipments kite surf done"
 
 puts " seeding equipments kayak starting"
 equipment_kayak_1 = Equipment.new(sport: "Kayak", brand: "Ventura", user: user2, price: 40, description: "kayak gonflable , il y a une pompe , super agreable ", board_size: 3.30, title: "kayak super à 2", condition: "medium", location: "La Baule")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_1.photo.attach(io: file, filename: 'kayak1.png', content_type: 'image/png')
 equipment_kayak_1.save!
 
 equipment_kayak_2 = Equipment.new(sport: "Kayak", brand: "Cove", user: user3, price: 42, description: "kayak gonflable , je le loue pour 1 semaine minimun  ", board_size: 3.20, title: "kayak super pour balade romantique", condition: "perfect", location: "Lacanau")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_2.photo.attach(io: file, filename: 'kayak2.png', content_type: 'image/png')
 equipment_kayak_2.save!
 
 equipment_kayak_3 = Equipment.new(sport: "Kayak", brand: "Decathlon", user: user4, price: 38, description: "je l'ai acheter lété dernier il est impecable , super pour les enfants ,kayak gonflable  ", board_size: 3.25, title: "kayak avec jumelles pour mater sur la plage", condition: "good", location: "St Malo")
-file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396014/kayak_puly48.jpg')
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653484524/kayak_img_v27okf.jpg')
 equipment_kayak_3.photo.attach(io: file, filename: 'kayak3.png', content_type: 'image/png')
 equipment_kayak_3.save!
 
