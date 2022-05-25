@@ -8,13 +8,13 @@ User.destroy_all
 puts "db clean"
 
 puts "seeding users starting"
-user1 = User.create(first_name: "yohann", last_name: "lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
+user1 = User.create!(first_name: "yohann", last_name: "lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
 
-user2 = User.create(first_name: "cedric", last_name: "le brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
+user2 = User.create!(first_name: "cedric", last_name: "le brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
 
-user3 = User.create(first_name: "margaux", last_name: "pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
+user3 = User.create!(first_name: "margaux", last_name: "pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
 
-user4 = User.create(first_name: "clement", last_name: "spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
+user4 = User.create!(first_name: "clement", last_name: "spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
 puts "seeding users done"
 
 puts "seeding equipments surf starting"
