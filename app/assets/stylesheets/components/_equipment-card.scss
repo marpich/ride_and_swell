@@ -64,3 +64,11 @@
 border-bottom: 1px solid rgb(221, 221, 221);
 margin-bottom: 40px;
 }
+
+.card-dashboard {
+  display: flex;
+  img {
+  width: 30%;
+  object-fit: cover;
+  }
+}

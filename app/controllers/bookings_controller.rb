@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to equipment_path(@equipment)
+      redirect_to dashboard_path
     else
       render 'equipments/show'
     end
