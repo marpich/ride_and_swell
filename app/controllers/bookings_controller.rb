@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @equipment = Equipment.find(params[:equipment_id])
     @booking.equipment = @equipment
-    @booking.status = "Pending"
+    @booking.status = "pending"
     @booking.user = current_user
 
     if @booking.save
