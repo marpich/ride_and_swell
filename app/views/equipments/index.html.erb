@@ -16,7 +16,9 @@
   </div>
   <% @equipments.each do |equipment| %>
       <div class="card">
-        <%= cl_image_tag(equipment.photo.key, :class => "card-img-top p-3", :height => 400) %>
+        <% if equipment.photo.key? %>
+          <%= cl_image_tag(equipment.photo.key, :class => "card-img-top p-3", :height => 400) %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= equipment.title %></h5>
           <p class="card-text"><%= equipment.description %></p>
