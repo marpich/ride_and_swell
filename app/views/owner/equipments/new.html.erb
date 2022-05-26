@@ -1,9 +1,9 @@
 <div class="container">
 
   <div class="box-jeune-rider">
-    <h2>Salut jeune rider 🤟🏼 </h2>
+    <h4>Hey Rider 🤟🏼 </h4>
     <h5>Planche de surf, aile de kite, paddle, ... Tu ne comptes plus les équipements nautiques qui dorment dans ta cave ?</h5>
-    <p>C'est le moment d'en faire partager la communauté Ride & Swell et de les mettre en location. Il te suffit de compléter ce formulaire et en quelques clics ton annonce sera en ligne.</p>
+    <p>C'est le moment d'en faire partager la communauté <strong>Ride & Swell</strong> et de les mettre en location. Il te suffit de compléter ce formulaire et en quelques clics ton équipement sera en ligne.</p>
   </div>
 
   <div class="adding-equipment-form">
@@ -29,7 +29,9 @@
         <div class="col-6"><%= f.input :description, label: "Description", placeholder: "Décris ton équipement"%></div>
         <div class="col-6"><%= f.input :photo, as: :file %></div>
       </div>
-      <%= f.submit "Ajouter", class: "btn btn-primary w-50" %>
+      <div class="d-grid col-3 mx-auto">
+        <%= f.submit "Ajouter", class: "btn btn-primary m-3" %>
+      </div>
     <% end %>
   </div>
 
