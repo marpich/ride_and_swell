@@ -1,5 +1,6 @@
 class Equipment < ApplicationRecord
   SPORTS = ["Kayak", "Kitesurf", "Paddle", "Surf", "Wakeboard", "Windsurf"]
+  CONDITIONS = ["Comme neuf", "Très bon état", "Bon état", "Etat d'usage"]
   geocoded_by :location
   belongs_to :user
   has_many :bookings
