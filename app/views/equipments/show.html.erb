@@ -18,7 +18,9 @@
   </div>
 
   <div class="card-equipment">
-    <%= cl_image_tag(@equipment.photo.key) %>
+    <% if @equipment.photo.key? %>
+      <%= cl_image_tag(@equipment.photo.key) %>
+    <% end %>
     <div class="card-equipment-info">
       <div class="price">
         <h2><%= @equipment.price %>€</h2>

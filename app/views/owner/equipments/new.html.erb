@@ -8,7 +8,7 @@
 </div>
 
 <div class="adding-equipment-form">
-  <%= simple_form_for @equipment do |f| %>
+  <%= simple_form_for [:owner, @equipment] do |f| %>
     <%= f.input :sport, label: "Type d'équipement", collection: Equipment::SPORTS %>
     <%= f.input :location, label: "Lieu", placeholder: "Indique la ville dans laquelle ton équipement est disponible"%>
     <%= f.input :title, label: "Titre"%>
@@ -18,6 +18,7 @@
     <%= f.input :sail_size, label: "Taille de l'aile"%>
     <%= f.input :condition, label: "Etat", placeholder: "Indique l'état de ton équipement", collection: Equipment::CONDITIONS %>
     <%= f.input :price, label: "Prix", placeholder: "0€" %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Ajouter", class: "btn btn-primary" %>
   <% end %>
 </div>
