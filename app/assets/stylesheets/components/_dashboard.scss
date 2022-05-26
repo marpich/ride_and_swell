@@ -1,0 +1,64 @@
+.card-dashboard {
+display: flex;
+margin: 10px 10px;
+padding: 20px 20px;
+border-radius: 5px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+position: relative;
+height: 200px;
+}
+
+.card-dashboard img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.card-dashboard-info {
+  padding-left: 20px;
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+
+.card-dashboard-info-price {
+  font-weight: 600;
+  margin: 10px 0px;
+}
+
+.card-dashboard-info-status {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  font-weight: 900;
+  // border: 1px solid #004aad;
+  // background-color: #004aad;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-bottom: 0px !important;
+}
+
+.card-dashboard-location {
+  display: flex;
+  margin: 10px 10px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  height: 420px;
+  }
+
+  .card-dashboard-location img {
+    width: 40%;
+    object-fit:contain;
+  }
+
+.user {
+  margin-top: 50px;
+}
+
+.choice {
+  margin-top: 50px;
+}
+
+
