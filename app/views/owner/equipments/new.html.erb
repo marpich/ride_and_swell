@@ -1,24 +1,36 @@
-<h1>Owner::Equipments#new</h1>
-<p>Find me in app/views/owner/equipments/new.html.erb</p>
-
 <div class="container">
-  <h1>Bonjour jeune rider ! Bienvenue à bord !</h1>
-  <h2> Planche de surf, aile de kite, paddle, ... Tu ne comptes plus les équipements nautiques qui dorment dans ta cave ? C'est le moment d'en faire partager la communauté Ride & Swell et de les mettre en location </h2>
-  <h3> Il te suffit de compléter ce formulaire et en quelques clicks ton annonce sera en ligne.</h3>
-</div>
 
-<div class="adding-equipment-form">
-  <%= simple_form_for [:owner, @equipment] do |f| %>
-    <%= f.input :sport, label: "Type d'équipement", collection: Equipment::SPORTS %>
-    <%= f.input :location, label: "Lieu", placeholder: "Indique la ville dans laquelle ton équipement est disponible"%>
-    <%= f.input :title, label: "Titre"%>
-    <%= f.input :brand, label: "Marque"%>
-    <%= f.input :description, label: "Description", placeholder: "Décris ton équipement"%>
-    <%= f.input :board_size, label: "Taille de la planche"%>
-    <%= f.input :sail_size, label: "Taille de l'aile"%>
-    <%= f.input :condition, label: "Etat", placeholder: "Indique l'état de ton équipement", collection: Equipment::CONDITIONS %>
-    <%= f.input :price, label: "Prix", placeholder: "0€" %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Ajouter", class: "btn btn-primary" %>
-  <% end %>
+  <div class="box-jeune-rider">
+    <h2>Salut jeune rider 🤟🏼 </h2>
+    <h5>Planche de surf, aile de kite, paddle, ... Tu ne comptes plus les équipements nautiques qui dorment dans ta cave ?</h5>
+    <p>C'est le moment d'en faire partager la communauté Ride & Swell et de les mettre en location. Il te suffit de compléter ce formulaire et en quelques clics ton annonce sera en ligne.</p>
+  </div>
+
+  <div class="adding-equipment-form">
+  <h4>Ton équipement</h4>
+    <%= simple_form_for [:owner, @equipment] do |f| %>
+      <div class="row">
+        <div class="col-6"><%= f.input :sport, label: "Sport", collection: Equipment::SPORTS, selected: 0 %></div>
+        <div class="col-6"><%= f.input :location, label: "Lieu", placeholder: "Indique la ville dans laquelle ton équipement est disponible"%></div>
+      </div>
+      <div class="row">
+        <div class="col-6"><%= f.input :title, label: "Titre", placeholder: "Indique le titre de ton équipement à louer"%></div>
+        <div class="col-6"><%= f.input :brand, label: "Marque", placeholder: "Indique la marque"%></div>
+      </div>
+      <div class="size row">
+        <div class="col-6"><%= f.input :board_size, label: "Taille de la planche"%></div>
+        <div class="col-6"><%= f.input :sail_size, label: "Taille de l'aile"%></div>
+      </div>
+      <div class="status row">
+        <div class="col-6"><%= f.input :condition, label: "Etat", placeholder: "Indique l'état de ton équipement", collection: Equipment::CONDITIONS %></div>
+        <div class="col-6"><%= f.input :price, label: "Prix", placeholder: "0€" %></div>
+      </div>
+      <div class="row">
+        <div class="col-6"><%= f.input :description, label: "Description", placeholder: "Décris ton équipement"%></div>
+        <div class="col-6"><%= f.input :photo, as: :file %></div>
+      </div>
+      <%= f.submit "Ajouter", class: "btn btn-primary w-50" %>
+    <% end %>
+  </div>
+
 </div>
