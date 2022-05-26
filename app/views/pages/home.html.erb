@@ -3,14 +3,11 @@
     <h1>La meilleur marketplace pour de l'equipements aquatique</h1>
     <p>Vous ne vous servez pas de votre materiel, proposez le aux autres </p>
     <%= link_to "Start now", equipments_path, class: "btn btn-home mx-auto" %>
-    <div class="cards">
 
+    <div class="cards">
       <% @categories.each do |category| %>
         <%= link_to equipments_path(category: category) do %>
-          <% if false %>
-            <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=asset_path category.gsub(' ','').downcase%>')">
-          <% end %>
-          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("#{category.downcase}.jpg")%>')">
             <%= category %>
           </div>
         <% end %>
