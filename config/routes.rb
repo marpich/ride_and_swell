@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     resources :equipments, only: [:new, :create]
     resources :bookings, except: [:show, :index, :new, :create, :destroy, :update, :edit] do
       member do
-        post :reject
-        post :accept
+        patch :reject
+        patch :accept
       end
     end
   end

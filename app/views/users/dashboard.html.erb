@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <div class="container">
-    <h2>Mes équipements en location</h2>
+    <h2><%= t("my_equipments") %></h2>
     <% @requests.each do |request| %>
       <div class="card-dashboard p-3">
         <%= cl_image_tag(request.equipment.photo.key) %>
@@ -27,8 +27,8 @@
           <p><%= request.total_price %> €</p>
           <p><%= request.status %></p>
           <div class="choice d-flex justify-content-between">
-            <button type="button" class="btn btn-success">Accepter</button>
-            <button type="button" class="btn btn-danger">Refuser</button>
+            <%= link_to "Accepter", accept_owner_booking_path(request), method: :patch %>
+            <%= link_to "Refuser", reject_owner_booking_path(request), method: :patch %>
           </div>
         </div>
       </div>
