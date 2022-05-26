@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :owner do
+    get 'equipments/new'
+    get 'equipments/create'
+  end
   devise_for :users
   root to: 'pages#home'
 

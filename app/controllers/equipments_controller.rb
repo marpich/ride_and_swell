@@ -25,15 +25,15 @@ class EquipmentsController < ApplicationController
     @booking = Booking.new
   end
 
-  def new
-    @equipment = Equipment.new
-  end
+  # def new
+  #   @equipment = Equipment.new
+  # end
 
-  def create
-    @equipment = Equipment.new(equipment_params)
-    @equipment.save
-    redirect_to equipment_path(@equipment)
-  end
+  # def create
+  #   @equipment = Equipment.new(equipment_params)
+  #   @equipment.save
+  #   redirect_to equipment_path(@equipment)
+  # end
 
   def edit
   end
