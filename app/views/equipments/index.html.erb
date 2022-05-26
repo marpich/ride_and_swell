@@ -1,13 +1,15 @@
 
 
 <div class="m-4">
-  <%= simple_form_for :search, url: equipments_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :title, input_html: {value: params[:category]} %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
+  <%= form_tag equipments_path, method: :get do %>
+    <%= select_tag :sport, options_for_select(Equipment::SPORTS, params[:sport]),
+      include_blank: true,
+      class: "form-control"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
 
-<%# <%= @mkers %>
 <div class="row d-flex justify-content-between row-cols-md-4 g-4 m-5">
   <div style="height: 600px;" class="d-flex p-2 left-half"
     data-controller="mapbox"

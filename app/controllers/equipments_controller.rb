@@ -3,13 +3,10 @@ class EquipmentsController < ApplicationController
 
   def index
     @equipments = Equipment.all
-    @search = params["search"]
-    if params[:category].present?
-      @equipments = Equipment.where("title ILIKE ?", "%#{params[:category].gsub(' ','')}%")
-    end
-    if @search.present?
-      @title = @search["title"]
-      @equipments = Equipment.where(title: @title)
+    @sport = params[:sport]
+
+    if @sport.present?
+      @equipments = Equipment.where(sport: @sport)
     end
 
     @markers = @equipments.geocoded.map do |equipment|
