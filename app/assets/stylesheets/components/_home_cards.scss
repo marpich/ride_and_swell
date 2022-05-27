@@ -19,7 +19,12 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    &:hover {
+      transform: scale(103%);
+      transition: 0.3s;
+    }
   }
+
   .cards a{
     text-decoration: none;
   }
