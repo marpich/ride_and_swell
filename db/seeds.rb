@@ -70,7 +70,7 @@ puts " seeding equipments paddle done"
 
 puts " seeding equipments kite surf starting"
 
-equipment_kite_1 = Equipment.new(sport: "Kitesurf", brand: "Gong", user: user3, price: "85", description: "Aile 2021/2022 mono latte légère et très maniable. Très peu de sorties à son actif", board_size: 5.4, sail_size: 12, title: "Aile Gong Modèle Unik", condition: "Comme neuf", location: "Granville")
+equipment_kite_1 = Equipment.new(sport: "Kitesurf", brand: "Gong", user: user2, price: "85", description: "Aile 2021/2022 mono latte légère et très maniable. Très peu de sorties à son actif", board_size: 5.4, sail_size: 12, title: "Aile Gong Modèle Unik", condition: "Comme neuf", location: "Granville")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653656257/unik-black_green_idijau.png')
 equipment_kite_1.photo.attach(io: file, filename: 'kite1.png', content_type: 'image/png')
 equipment_kite_1.save!
