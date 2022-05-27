@@ -38,17 +38,17 @@ equipment_surf_3.save!
 puts " seedint equipments surf done"
 
 puts " seeding equipments paddle starting"
-equipment_paddle_1 = Equipment.new(sport: "Paddle", brand: "Tyler Warren", user: user4, price: 40, description: "tu vas aimer sa tenue en mer , super agreable", board_size: 2.20, title: "paddle de qualité", condition: "medium", location: "La Baule")
+equipment_paddle_1 = Equipment.new(sport: "Paddle", brand: "Gong", user: user4, price: 60, description: "Paddle gonflable, très stable, possibilité d'ajouter deux dérives", board_size: 14, title: "Paddle Gong Modèle Couine Marie", condition: "Bon état", location: "Jullouville")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653489202/paddle_ims_q88j3n.jpg')
 equipment_paddle_1.photo.attach(io: file, filename: 'paddle1.png', content_type: 'image/png')
 equipment_paddle_1.save!
 
-equipment_paddle_2 = Equipment.new(sport: "Paddle", brand: "Decathlon", user: user1, price: 38, description: "du plaisir , voila le mot d'ordre avec cette superbe planche ", board_size: 2.20, title: "paddle de pro je te promets", condition: "perfect", location: "Lacanau")
+equipment_paddle_2 = Equipment.new(sport: "Paddle", brand: "Tahe", user: user1, price: 45, description: "Le Stand Up Paddle rigide beach cross est solide, très stable et facile, pour des gabarits autour de 80 kg, pour pratiquer la balade ou prendre des petites vagues - 195L", board_size: 10, title: "Paddle rigide Outdoor Beach Cross de Tahe Decathlon", condition: "Bon état", location: "Carolles")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653489202/paddle_ims_q88j3n.jpg')
 equipment_paddle_2.photo.attach(io: file, filename: 'paddle2.png', content_type: 'image/png')
 equipment_paddle_2.save!
 
-equipment_paddle_3 = Equipment.new(sport: "Paddle", brand: "Sps", user: user2, price: 45, description: "la meilleur planche de paddle que tu puisse avoir le top du top ", board_size: 2.22, title: "paddle pour kiffer", condition: "perfect", location: "St Malo")
+equipment_paddle_3 = Equipment.new(sport: "Paddle", brand: "Itiwit", user: user2, price: 25, description: "Un Stand Up Paddle (SUP) gonflable aux dimensions généreuses, très stable et facile, pour des gabarits entre 60 et 80 kg, pour pratiquer la balade ou prendre des petites vagues.", board_size: 10, title: "Paddle gonflable de randonnée débutant", condition: "Etat d'usage", location: "Lancieux")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653489202/paddle_ims_q88j3n.jpg')
 equipment_paddle_3.photo.attach(io: file, filename: 'paddle3.png', content_type: 'image/png')
 equipment_paddle_3.save!
@@ -56,17 +56,17 @@ equipment_paddle_3.save!
 puts " seeding equipments paddle done"
 
 puts " seeding equipments kite surf starting"
-equipment_kite_1 = Equipment.new(sport: "Kitesurf", brand: "Boardworks", user: user3, price: "55", description: "un petit plaisir en mer , utilise ce kite surf , un orgasme en mer", board_size: 2.05, sail_size: 12, title: "kite de fou je te promets", condition: "good", location: "La Baule")
+equipment_kite_1 = Equipment.new(sport: "Kitesurf", brand: "Gong", user: user3, price: "85", description: "Aile 2021/2022 mono latte légère et très maniable. Très peu de sorties à son actif", board_size: 5.4, sail_size: 12, title: "Aile Gong Modèle Unik", condition: "Comme neuf", location: "Granville")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396924/kitesurf_lqn065.jpg')
 equipment_kite_1.photo.attach(io: file, filename: 'kite1.png', content_type: 'image/png')
 equipment_kite_1.save!
 
-equipment_kite_2 = Equipment.new(sport: "Kitesurf", brand: "Corsurf", user: user4, price: "50", description: "superbe planche franchement top pour mousser devant les filles à la plage", board_size: 2.08, sail_size: 9, title: "kite pour ce la raconter à la plage", condition: "medium", location: "Lacanau")
+equipment_kite_2 = Equipment.new(sport: "Kitesurf", brand: "North", user: user4, price: "70", description: "Aile Carve de North, aussi bien en freeride que dans les vagues. ", board_size: 5.4, sail_size: 9, title: "Kite North Carve Verte", condition: "Bon état", location: "Avranches")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396924/kitesurf_lqn065.jpg')
 equipment_kite_2.photo.attach(io: file, filename: 'kite2.png', content_type: 'image/png')
 equipment_kite_2.save!
 
-equipment_kite_3 = Equipment.new(sport: "Kitesurf", brand: "Decathlon", user: user1, price: "48", description: "je vous propose mon kite , je l'ai acheter mais je ne sais pas en faire donc je le loue ", board_size: 2.07, sail_size: 12, title: "kitesurf sympa", condition: "perfect", location: "St Malo")
+equipment_kite_3 = Equipment.new(sport: "Kitesurf", brand: "Orao", user: user1, price: "55", description: "Conçue pour le rider autonome qui cherche une aile performance freeride pour naviguer, en twin tip, surf, ou Foil.", board_size: 5.4, sail_size: 5, title: "Kite Performance & Freeride", condition: "Très bon état", location: "St Malo")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653396924/kitesurf_lqn065.jpg')
 equipment_kite_3.photo.attach(io: file, filename: 'kite3.png', content_type: 'image/png')
 equipment_kite_3.save!
