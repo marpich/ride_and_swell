@@ -3,58 +3,60 @@
   <h1><%= @equipment.sport %></h1>
 </div>
 
+<div class="container">
 
-<div class="card">
-  <div class="card-title">
-    <h2> <%= @equipment.title.capitalize %> </h2>
-    <button type="button" class="btn btn-secondary">
-      <%= link_to 'Retour', equipments_path %>
-    </button>
-  </div>
-
-  <div class="card-subtitle">
-    <h4> <i class="fas fa-map-marker-alt"></i> <%= @equipment.location %> </h4>
-    <p> <i class="fas fa-user"></i> <%= @equipment.user.first_name.capitalize %></p>
-  </div>
-
-  <div class="card-equipment">
-    <% if @equipment.photo.key? %>
-      <%= cl_image_tag(@equipment.photo.key) %>
-    <% end %>
-    <div class="card-equipment-info">
-      <div class="price">
-        <h2><%= @equipment.price %>€</h2>
-        <p> <i>prix/jour</i> </p>
-      </div>
-      <span><strong>Marque</strong></span>
-      <p><%= @equipment.brand %></p>
-      <% if @equipment.board_size? %>
-        <span><strong>Taille de la board</strong></span>
-        <p><%= @equipment.board_size %></p>
-      <% end %>
-      <% if @equipment.sail_size? %>
-        <span><strong>Taille de l'aile</strong></span>
-        <p><%= @equipment.sail_size %></p>
-      <% end %>
-      <span><strong>Etat</strong></span>
-      <p><%= @equipment.condition %></p>
-      <span><strong>Description</strong></span>
-      <p><%= @equipment.description %></p>
+  <div class="card">
+    <div class="card-title">
+      <h2> <%= @equipment.title.capitalize %> </h2>
     </div>
 
-      <div class="booking-form" data-controller="booking-form" data-booking-form-dailyprice-value='<%= @equipment.price %>'>
-        <%= simple_form_for [@equipment, @booking] do |f| %>
-        <div class="booking-form-input">
-          <%= f.input :start_date, label: "Début de location", html5: true, input_html: { "data-action":"change->booking-form#update" ,"data-booking-form-target":"startdate" } %>
-          <%= f.input :end_date, label: "Fin de location", html5: true, input_html: { "data-action":"change->booking-form#update", "data-booking-form-target":"enddate" } %>
+    <div class="card-subtitle">
+      <h4> <i class="fas fa-map-marker-alt text-blue"></i> <%= @equipment.location %> </h4>
+      <p> <i class="fas fa-user text-blue"></i> <%= @equipment.user.first_name.capitalize %></p>
+    </div>
+
+    <div class="card-equipment">
+      <% if @equipment.photo.key? %>
+        <%= cl_image_tag(@equipment.photo.key) %>
+      <% end %>
+      <div class="card-equipment-info">
+        <div class="price">
+          <h2><%= @equipment.price %>€</h2>
+          <p> <i>prix/jour</i> </p>
         </div>
-          <%= f.input :total_price, label: false, input_html: { hidden: true,  "data-booking-form-target":"totalpriceinput" } %>
-          <div> Montant total : <span data-booking-form-target="totalprice" >0</span>€</div>
-          <%= f.submit "Louer", class: "btn btn-primary w-100" %>
+        <span><strong>Marque</strong></span>
+        <p><%= @equipment.brand %></p>
+        <% if @equipment.board_size? %>
+          <span><strong>Taille de la board</strong></span>
+          <p><%= @equipment.board_size %></p>
         <% end %>
+        <% if @equipment.sail_size? %>
+          <span><strong>Taille de l'aile</strong></span>
+          <p><%= @equipment.sail_size %></p>
+        <% end %>
+        <span><strong>Etat</strong></span>
+        <p><%= @equipment.condition %></p>
+        <span><strong>Description</strong></span>
+        <p><%= @equipment.description %></p>
       </div>
-    </div>
 
+        <div class="booking-form" data-controller="booking-form" data-booking-form-dailyprice-value='<%= @equipment.price %>'>
+          <%= simple_form_for [@equipment, @booking] do |f| %>
+          <div class="booking-form-input">
+            <%= f.input :start_date, label: "Début de location", html5: true, input_html: { "data-action":"change->booking-form#update" ,"data-booking-form-target":"startdate" } %>
+            <%= f.input :end_date, label: "Fin de location", html5: true, input_html: { "data-action":"change->booking-form#update", "data-booking-form-target":"enddate" } %>
+          </div>
+            <%= f.input :total_price, label: false, input_html: { hidden: true,  "data-booking-form-target":"totalpriceinput" } %>
+            <div class="total-price d-flex align-items-end flex-column">
+              <div>Montant total</div>
+              <strong><span data-booking-form-target="totalprice" >0</span>€</strong>
+            </div>
+            <%= f.submit "Louer", class: "btn btn-main w-100" %>
+          <% end %>
+        </div>
+      </div>
+
+      </div>
     </div>
   </div>
 </div>
