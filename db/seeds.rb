@@ -43,7 +43,7 @@ file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653643007/y
 equipment_surf_2.photo.attach(io: file, filename: 'surf2.png', content_type: 'image/png')
 equipment_surf_2.save!
 
-equipment_surf_3 = Equipment.new(sport: "Surf", brand: "Victory", user: user3, price: 32, description: "Planche parfaite pour débuter et progresser en toute sécurité", board_size: 6.0, title: "Victory Softboard EPS", condition: "Comme neuf", location: "Pornic")
+equipment_surf_3 = Equipment.new(sport: "Surf", brand: "Victory", user: user4, price: 32, description: "Planche parfaite pour débuter et progresser en toute sécurité", board_size: 6.0, title: "Victory Softboard EPS", condition: "Comme neuf", location: "Pornic")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653643794/surfvert_ybundz.webp')
 equipment_surf_3.photo.attach(io: file, filename: 'surf3.png', content_type: 'image/png')
 equipment_surf_3.save!
@@ -69,6 +69,7 @@ equipment_paddle_3.save!
 puts " seeding equipments paddle done"
 
 puts " seeding equipments kite surf starting"
+
 equipment_kite_1 = Equipment.new(sport: "Kitesurf", brand: "Gong", user: user3, price: "85", description: "Aile 2021/2022 mono latte légère et très maniable. Très peu de sorties à son actif", board_size: 5.4, sail_size: 12, title: "Aile Gong Modèle Unik", condition: "Comme neuf", location: "Granville")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653656257/unik-black_green_idijau.png')
 equipment_kite_1.photo.attach(io: file, filename: 'kite1.png', content_type: 'image/png')
@@ -92,7 +93,7 @@ file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653645188/k
 equipment_kayak_1.photo.attach(io: file, filename: 'kayak1.png', content_type: 'image/png')
 equipment_kayak_1.save!
 
-equipment_kayak_2 = Equipment.new(sport: "Kayak", brand: "RTM", user: user3, price: 42, description: "Kayak de randonnée confortable, idéal pour des randonnée en famille", title: "Kayak Brio RTM", condition: "Comme neuf", location: "St Malo")
+equipment_kayak_2 = Equipment.new(sport: "Kayak", brand: "RTM", user: user1, price: 42, description: "Kayak de randonnée confortable, idéal pour des randonnée en famille", title: "Kayak Brio RTM", condition: "Comme neuf", location: "St Malo")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653645623/kayak-brio-rtm_xcsaa2.jpg')
 equipment_kayak_2.photo.attach(io: file, filename: 'kayak2.png', content_type: 'image/png')
 equipment_kayak_2.save!
@@ -115,7 +116,7 @@ file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653489085/w
 equipment_wake_2.photo.attach(io: file, filename: 'wake2.png', content_type: 'image/png')
 equipment_wake_2.save!
 
-equipment_wake_3 = Equipment.new(sport: "Wakeboard", brand: "Deacathlon", user: user3, price: 55, description: "vraiment super pour les vacances ou bien apprendre tranquillement", board_size: 1.40, sail_size: 12, title: "wakeboard pour apprendre", condition: "perfect", location: "St Malo")
+equipment_wake_3 = Equipment.new(sport: "Wakeboard", brand: "Deacathlon", user: user4, price: 55, description: "vraiment super pour les vacances ou bien apprendre tranquillement", board_size: 1.40, sail_size: 12, title: "wakeboard pour apprendre", condition: "perfect", location: "St Malo")
 file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653489085/wakeboard_img_ljk35v.jpg')
 equipment_wake_3.photo.attach(io: file, filename: 'wake3.png', content_type: 'image/png')
 equipment_wake_3.save!
