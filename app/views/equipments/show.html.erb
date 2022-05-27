@@ -6,13 +6,14 @@
 <div class="container">
 
   <div class="card">
-    <div class="card-title">
+    <div class="card-title d-flex justify-content-between">
       <h2> <%= @equipment.title.capitalize %> </h2>
+      <p> <%= cl_image_tag @equipment.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> <%= @equipment.user.first_name.capitalize %></p>
+
     </div>
 
     <div class="card-subtitle">
       <h4> <i class="fas fa-map-marker-alt text-blue"></i> <%= @equipment.location %> </h4>
-      <p> <i class="fas fa-user text-blue"></i> <%= @equipment.user.first_name.capitalize %></p>
     </div>
 
     <div class="card-equipment">

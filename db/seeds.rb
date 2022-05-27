@@ -9,13 +9,26 @@ User.destroy_all
 puts "db clean"
 
 puts "seeding users starting"
-user1 = User.create!(first_name: "Yohann", last_name: "Lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
+user1 = User.new(first_name: "Yohann", last_name: "Lemasson", email: "yohann@gmail.com", phone: "0606060601", password: "yohann")
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653653450/yohann-photo_mkgyhl.jpg')
+user1.photo.attach(io: file, filename: 'user1.png', content_type: 'image/png')
+user1.save!
 
-user2 = User.create!(first_name: "Cedric", last_name: "Le Brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
+user2 = User.new(first_name: "Cedric", last_name: "Le Brun", email: "cedric@gmail.com", phone: "0606060602", password: "cedric")
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653653052/photo-c%C3%A9dric_h6m7dd.jpg')
+user2.photo.attach(io: file, filename: 'user2.png', content_type: 'image/png')
+user2.save!
 
-user3 = User.create!(first_name: "Margaux", last_name: "Pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
+user3 = User.new(first_name: "Margaux", last_name: "Pichard", email: "margaux@gmail.com", phone: "0606060603", password: "margaux")
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653653443/photo-margaux_gr8cjn.jpg')
+user3.photo.attach(io: file, filename: 'user3.png', content_type: 'image/png')
+user3.save!
 
-user4 = User.create!(first_name: "Clement", last_name: "Spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
+user4 = User.new(first_name: "Clement", last_name: "Spiers", email: "clement@gmail.com", phone: "0606060604", password: "clement")
+file = URI.open('https://res.cloudinary.com/dciokrtia/image/upload/v1653653447/clement-photo_q5bl5h.png')
+user4.photo.attach(io: file, filename: 'user4.png', content_type: 'image/png')
+user4.save!
+
 puts "seeding users done"
 
 puts "seeding equipments surf starting"
