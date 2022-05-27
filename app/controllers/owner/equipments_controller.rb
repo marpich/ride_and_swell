@@ -12,7 +12,7 @@ class Owner::EquipmentsController < ApplicationController
     @user = current_user
     @equipment.user = @user
     if @equipment.save
-      redirect_to equipment_path(@equipment)
+      redirect_to owner_equipments_path
     else
       render :new
     end
