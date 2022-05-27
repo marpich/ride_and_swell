@@ -1,5 +1,20 @@
 .main-container {
   display: flex;
+  .card-dashboard{
+    padding: 10px;
+
+
+
+    .card-dashboard-info-price {
+      font-size: x-large;
+    }
+    .card-location {
+      font-size: 20px;
+    }
+    .btn-main{
+      margin-right: -60px
+    }
+  }
 }
 
 #map {
@@ -14,5 +29,13 @@
   // display: grid;
   // grid-template-columns: 1fr 1fr;
   flex-grow: 1;
-  position: sticky;
+  // position: sticky;
+}
+
+.voir-button {
+  position: absolute;
+  .btn {
+    position: relative;
+
+  }
 }
