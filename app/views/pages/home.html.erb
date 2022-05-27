@@ -1,40 +1,17 @@
 <div class="home banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518860000863-3adc82cce3cf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGxhZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800);">
   <div class="container main-home d-flex flex-column text-center">
-    <h1>La meilleur marketplace pour de l'equipements aquatique</h1>
-    <p>Vous ne vous servez pas de votre materiel, proposez le aux autres </p>
+    <h1>Le meilleur endroit pour trouver votre équipement aquatique</h1>
+    <p>Vous voulez vous faire plaisir sur l'eau, choisissez l'équipement qui vous convient et bon vent !</p>
     <%= link_to "Start now", equipments_path, class: "btn btn-home mx-auto" %>
-    <div class="cards">
 
+    <div class="cards">
       <% @categories.each do |category| %>
-        <%= link_to equipments_path(category: category) do %>
-          <% if false %>
-            <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=asset_path category.gsub(' ','').downcase%>')">
-          <% end %>
-          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to equipments_path(sport: category) do %>
+          <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=image_url("#{category.downcase}.jpg")%>')">
             <%= category %>
           </div>
         <% end %>
       <% end %>
-<%#
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1601283261983-543e77949437?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870)">
-        Paddle
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1607537826539-0eb279b56804?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770)">
-      Kite Surf
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1562388831-a7a060b9c1fe?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836)">
-        Kayak
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1621701131147-8aa4858beda1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8d2FrZWJvYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800)">
-        Wakeboard
-      </div> %>
-
-      <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1589026090604-02eea05c95c8?ixlib=rb-1.2.1&raw_url=true&q=60&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d2luZHN1cmZ8ZW58MHx8MHx8&auto=format&fit=crop&w=800)">
-      Windsurf
-      </div> %>
     </div>
 
   </div>
