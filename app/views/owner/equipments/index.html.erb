@@ -1,0 +1,37 @@
+<div class="container">
+
+  <h1>Mon matériel</h1>
+  <% @equipments.each do |equipment| %>
+    <div class="card">
+      <div class="card-title">
+        <h2> <%= equipment.title.capitalize %> </h2>
+      </div>
+
+      <div class="card-subtitle">
+        <h4> <i class="fas fa-map-marker-alt text-blue"></i> <%= equipment.location %> </h4>
+      </div>
+
+      <div class="card-equipment">
+        <% if equipment.photo.key? %>
+          <%= cl_image_tag(equipment.photo.key) %>
+        <% end %>
+        <div class="card-equipment-info">
+          <span><strong>Marque</strong></span>
+          <p><%= equipment.brand %></p>
+          <% if equipment.board_size? %>
+            <span><strong>Taille de la board</strong></span>
+            <p><%= equipment.board_size %></p>
+          <% end %>
+          <% if equipment.sail_size? %>
+            <span><strong>Taille de l'aile</strong></span>
+            <p><%= equipment.sail_size %></p>
+          <% end %>
+          <span><strong>Etat</strong></span>
+          <p><%= equipment.condition %></p>
+          <span><strong>Description</strong></span>
+          <p><%= equipment.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

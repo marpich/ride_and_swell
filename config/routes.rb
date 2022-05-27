@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :owner do
-    resources :equipments, only: [:new, :create]
+    resources :equipments, only: [:new, :create, :index]
     resources :bookings, except: [:show, :index, :new, :create, :destroy, :update, :edit] do
       member do
         patch :reject

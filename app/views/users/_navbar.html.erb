@@ -32,7 +32,7 @@
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon matériel", owner_equipments_path, class: "dropdown-item text-blue" %>
+              <%= link_to "Action", "#", class: "dropdown-item text-blue" %>
               <%= link_to "Mes locations", "/dashboard", class: "dropdown-item text-blue" %>
               <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item text-blue" %>
             </div>
