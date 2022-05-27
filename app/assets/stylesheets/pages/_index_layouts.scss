@@ -1,0 +1,41 @@
+.main-container {
+  display: flex;
+  .card-dashboard{
+    padding: 10px;
+
+
+
+    .card-dashboard-info-price {
+      font-size: x-large;
+    }
+    .card-location {
+      font-size: 20px;
+    }
+    .btn-main{
+      margin-right: -60px
+    }
+  }
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.index-cards {
+  padding-right: 2rem;
+  padding-left: 1rem;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  // position: sticky;
+}
+
+.voir-button {
+  position: absolute;
+  .btn {
+    position: relative;
+
+  }
+}
