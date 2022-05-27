@@ -67,7 +67,6 @@
             </div>
           </div>
           <div class="choice d-flex justify-content-around">
-            <% request.status = "pending" %>
             <% if request.status == "pending" %>
               <div><%= link_to "Refuser", reject_owner_booking_path(request), method: :patch, class: "btn-sec" %></div>
               <div><%= link_to "Accepter", accept_owner_booking_path(request), method: :patch, class: "btn-main" %></div>
