@@ -20,5 +20,23 @@
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        With love <i class="fas fa-heart text-blue"></i> from
+        <%= image_tag "ride_and_swell_name.png", height: 60 %>
+        team
+      </div>
+    </div>
+
   </body>
+
+
 </html>
