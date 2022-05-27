@@ -3,6 +3,7 @@
 require "open-uri"
 
 puts "cleanning db"
+Booking.destroy_all
 Equipment.destroy_all
 User.destroy_all
 puts "db clean"
