@@ -1,4 +1,7 @@
 class Owner::EquipmentsController < ApplicationController
+  def index
+    @equipments = Equipment.where(user: current_user)
+  end
 
   def new
     @equipment = Equipment.new
