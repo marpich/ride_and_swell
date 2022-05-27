@@ -7,17 +7,13 @@
   <% end %>
 </div>
 
-<%# <%= @mkers %>
-<div class="row d-flex justify-content-between row-cols-md-4 g-4 m-5">
-  <div style="height: 600px;" class="d-flex p-2 left-half"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <% @equipments.each do |equipment| %>
-      <div class="card">
+<div class="main-container">
+
+  <div class="index-cards">
+    <% @equipments.each do |equipment| %>
+      <div class="card w-100">
         <% if equipment.photo.key? %>
-          <%= cl_image_tag(equipment.photo.key, :class => "card-img-top p-3", :height => 400) %>
+          <%= cl_image_tag(equipment.photo.key, :class => "card-img-top p-3", :height => 200) %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= equipment.title %></h5>
@@ -28,5 +24,13 @@
             <p><%= equipment.price %>€ par jour</p>
         </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div id="map" class="d-flex p-2 left-half col-4 my-2"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
